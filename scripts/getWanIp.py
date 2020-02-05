@@ -10,6 +10,7 @@ def writeIP():
     f.close()
     return externalIp
 
+# main program
 def main():
     try:
         f = open("extIp.txt","r")
