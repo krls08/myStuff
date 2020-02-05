@@ -1,13 +1,14 @@
 import urllib.request
 import smtplib
-from email.mime.multipart import MIMEMulitipart
-from email.mime.text import MIMEText
+#from email.mime.multipart import MIMEMulitipart
+#from email.mime.text import MIMEText
 
 def writeIP():
     f = open("extIp.txt","w")
     externalIp = urllib.request.urlopen('https://api.ipify.org/').read().decode('utf8')
     f.write(externalIp)
     f.close()
+    return externalIp
 
 def main():
     try:
@@ -17,8 +18,8 @@ def main():
         f.close()
     except :
         print('file doesnt exist -> create file')
-        writeIP()
-        myIp = externalIp
+        myIp = writeIP()
+
 
     print('Compraing ips')
     externalIp = urllib.request.urlopen('https://api.ipify.org/').read().decode('utf8')
