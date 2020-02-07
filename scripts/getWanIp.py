@@ -1,7 +1,5 @@
 import urllib.request
 import smtplib
-#from email.mime.multipart import MIMEMulitipart
-#from email.mime.text import MIMEText
 
 def writeIP():
     f = open("extIp.txt","w")
